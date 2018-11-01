@@ -8,6 +8,11 @@
     "react-dom": "^16.6.0",
     "react-scripts": "2.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryandabler/idlelife.git"
+  },
+  "author": "Ryan Dabler <r.p.dabler@gmail.com> (https://ryandabler.github.io)",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
