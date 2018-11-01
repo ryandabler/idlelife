@@ -10,7 +10,8 @@
         "sourceType": "module",
         "ecmaVersion": 2017,
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true
+            "experimentalObjectRestSpread": true,
+            "classes": true
         }
     },
     "rules": {
@@ -22,6 +23,7 @@
         "constructor-super": "warn",
         "valid-typeof": "warn"
     },
+    "parser": "babel-eslint",
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
