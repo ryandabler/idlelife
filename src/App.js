@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Header from './components/header';
 import GardenPanel from './components/panels/garden-panel';
 import GermanPanel from './components/panels/german-panel';
