@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './idle-panel.css';
 
 class IdlePanel extends Component {
     static displayName = 'IdlePanel';

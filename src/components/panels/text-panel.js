@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './text-panel.css';
 
 class TextPanel extends Component {
     static displayName = 'TextPanel';

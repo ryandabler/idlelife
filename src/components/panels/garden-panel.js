@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './garden-panel.css';
 
 class GardenPanel extends Component {
     static displayName = 'GardenPanel';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './german-panel.css';
 
 class GermanPanel extends Component {
     static displayName = 'GermanPanel';

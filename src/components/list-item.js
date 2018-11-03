@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './list-item.css';
 
 class ListItem extends Component {
     static displayName = 'ListItem';
