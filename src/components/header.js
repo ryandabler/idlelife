@@ -5,7 +5,8 @@ class Header extends Component {
 
     render() {
         return (
-            <header role='header'>
+            <header style={{gridArea: 'e', backgroundColor: 'pink'}}>
+                Header
             </header>
         );
     }

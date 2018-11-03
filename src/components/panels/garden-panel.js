@@ -5,8 +5,9 @@ class GardenPanel extends Component {
 
     render() {
         return (
-            <li className="garden-panel">
-            </li>
+            <section className="garden-panel" style={{gridArea: 'b', backgroundColor: 'red'}}>
+                GARDEN PANEL
+            </section>
         );
     }
 }

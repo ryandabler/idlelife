@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html, body, main, .App {
+  height: 100%;
+}
+
+.App {
+  display: grid;
+  grid-template-areas: 'e e e'
+                       'a b c'
+                       'a d c';
+  grid-template-rows: 50px 8fr 2fr;
+  grid-template-columns: 1fr 4fr 1fr;
+}

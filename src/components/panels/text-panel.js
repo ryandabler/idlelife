@@ -5,8 +5,9 @@ class TextPanel extends Component {
 
     render() {
         return (
-            <li className="text-panel">
-            </li>
+            <section className="text-panel" style={{gridArea: 'c', backgroundColor: 'green'}}>
+                TEXT PANEL
+            </section>
         );
     }
 }

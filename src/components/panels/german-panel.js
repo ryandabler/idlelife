@@ -5,8 +5,9 @@ class GermanPanel extends Component {
 
     render() {
         return (
-            <li className="german-panel">
-            </li>
+            <section className="german-panel" style={{gridArea: 'd', backgroundColor: 'blue'}}>
+                GERMAN PANEL
+            </section>
         );
     }
 }

@@ -5,8 +5,8 @@ class IdlePanel extends Component {
 
     render() {
         return (
-            <li className="idle-panel">
-            </li>
+            <section className="idle-panel" style={{gridArea: 'a', backroundColor: 'yellow'}}>
+            </section>
         );
     }
 }
