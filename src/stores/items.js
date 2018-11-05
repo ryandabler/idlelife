@@ -1,8 +1,3 @@
-const PERSON = {
-    inventory: {},
-    stats: {}
-};
-
 const ITEMS = [
     {
         id: 1,
@@ -21,4 +16,4 @@ const ITEMS = [
     }
 ];
 
-export { PERSON, ITEMS };
+export default ITEMS;
