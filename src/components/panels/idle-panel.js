@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListContainer from '../list-container';
 import { ITEMS } from '../../store';
+import FarmItem from '../list-items/farm-item';
 
 class IdlePanel extends Component {
     static displayName = 'IdlePanel';
