@@ -6,11 +6,21 @@ class FarmItem extends Component {
     // static propTypes = {
     //     text: 
     // }
+    
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind( this );
+    }
+
+    onClick() {
+        const { id, onItemSelect } = this.props;
+        onItemSelect(id);
+    }
 
     render() {
         const { name, time } = this.props;
         return (
-            <li className="list-item-farm">
+            <li className="list-item-farm" onClick={this.onClick}>
                 <span>{ name }</span>
                 <span className="time">{ time }</span>
             </li>

@@ -5,10 +5,10 @@ class ListContainer extends Component {
     static displayName = 'ListContainer';
 
     render() {
-        const { items, ItemComponent } = this.props;
+        const { items, ItemComponent, onItemSelect } = this.props;
         return (
             <ul className="list-container">
-                { items.map(item => <ItemComponent key={item.id} {...item} />) }
+                { items.map(item => <ItemComponent key={item.id} onItemSelect={onItemSelect} {...item} />) }
             </ul>
         );
     }
