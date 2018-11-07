@@ -28,6 +28,33 @@ html, body, main, .App {
 
 .list-container {
   list-style: none;
-  padding: 0;
+  padding: 8px;
   margin: 0;
+}
+
+.list-item-farm {
+  border: 1px solid #000000;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.list-item-farm:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.list-item-farm:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+
+.list-item-farm .time {
+  color: #808080;
+  font-size: 80%;
+}
+
+.list-item-farm:hover .time {
+  color: #e1e8f0;
 }
