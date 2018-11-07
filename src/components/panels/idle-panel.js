@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ListContainer from '../list-container';
-import { ITEMS } from '../../store';
+import { IDLABLES } from '../../stores/idlables';
 import FarmItem from '../list-items/farm-item';
 
 class IdlePanel extends Component {
@@ -9,7 +9,7 @@ class IdlePanel extends Component {
     render() {
         return (
             <section className="idle-panel" style={{gridArea: 'a', backroundColor: 'yellow'}}>
-                <ListContainer items={ITEMS} ItemComponent={FarmItem} />
+                <ListContainer items={IDLABLES} ItemComponent={FarmItem} />
             </section>
         );
     }
