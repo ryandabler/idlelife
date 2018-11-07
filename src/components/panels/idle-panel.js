@@ -8,7 +8,7 @@ class IdlePanel extends Component {
     render() {
         return (
             <section className="idle-panel" style={{gridArea: 'a', backroundColor: 'yellow'}}>
-                <ListContainer items={ITEMS} />
+                <ListContainer items={ITEMS} ItemComponent={FarmItem} />
             </section>
         );
     }
