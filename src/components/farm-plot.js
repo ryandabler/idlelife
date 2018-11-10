@@ -9,6 +9,8 @@ const FarmPlot = observer(class FarmPlot extends Component {
         this.onClick = this.onClick.bind( this );
     }
 
+    static displayName = 'FarmPlot';
+
     static propTypes = {
         slotNum: PropTypes.number.isRequired
     };
@@ -34,7 +36,5 @@ const FarmPlot = observer(class FarmPlot extends Component {
         );
     }
 });
-
-FarmPlot.displayName = 'FarmPlot';
 
 export default FarmPlot;

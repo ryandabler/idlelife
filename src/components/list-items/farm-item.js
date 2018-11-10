@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class FarmItem extends Component {
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind( this );
+    }
+        
     static displayName = 'FarmItem';
-
+    
     static propTypes = {
         name: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
@@ -11,11 +16,6 @@ class FarmItem extends Component {
         onItemSelect: PropTypes.func.isRequired
     };
     
-    constructor(props) {
-        super(props);
-        this.onClick = this.onClick.bind( this );
-    }
-
     onClick() {
         const { id, onItemSelect } = this.props;
         onItemSelect(id);
