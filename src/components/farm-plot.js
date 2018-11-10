@@ -9,14 +9,14 @@ const FarmPlot = observer(class FarmPlot extends Component {
         this.onClick = this.onClick.bind( this );
     }
 
-    propTypes = {
+    static propTypes = {
         slotNum: PropTypes.number.isRequired
     };
 
     onClick() {
         let { slotNum } = this.props;
         if (this.isSelected) slotNum = -1;
-        
+
         STORE.locations['farm'].selectedSlot = slotNum;
     }
 
