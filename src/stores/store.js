@@ -75,6 +75,7 @@ class Store {
 
         // start idling
         this.idling.push(idleObj);
+        this.locations[currentLocation].selectedSlot = -1;
     }
 }
 
