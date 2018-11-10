@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class FarmItem extends Component {
     static displayName = 'FarmItem';
 
-    // static propTypes = {
-    //     text: 
-    // }
+    static propTypes = {
+        name: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        time: PropTypes.number.isRequired,
+        onItemSelect: PropTypes.func.isRequired
+    };
     
     constructor(props) {
         super(props);
