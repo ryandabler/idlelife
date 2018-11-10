@@ -1,3 +1,4 @@
+import { decorate, observable } from 'mobx';
 import { IDLABLES } from './idlables';
 
 let idGenCounter = 0;
@@ -32,7 +33,7 @@ class IdleObject {
 }
 
 class Store {
-    currentLocation = 'Farm';
+    currentLocation = 'farm';
     player = {
         inventory: {},
         stats: [],
@@ -41,7 +42,8 @@ class Store {
     idling = [];
     locations = {
         farm: {
-            slots: 1
+            slots: 1,
+            selectedSlot: -1
         }
     }
 
@@ -73,6 +75,13 @@ class Store {
         this.idling.push(idleObj);
     }
 }
+
+decorate(Store, {
+    currentLocation: observable,
+    player: observable,
+    idling: observable,
+    locations: observable
+});
 
 const STORE = new Store();
 export default STORE;
