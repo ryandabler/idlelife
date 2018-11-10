@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { observer } from 'mobx-react';
 import STORE from '../stores/store';
 
-class FarmPlot extends Component {
+const FarmPlot = observer(class FarmPlot extends Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind( this );
@@ -22,7 +23,7 @@ class FarmPlot extends Component {
             </div>
         );
     }
-}
+});
 
 FarmPlot.displayName = 'FarmPlot';
 FarmPlot.propTypes = {
