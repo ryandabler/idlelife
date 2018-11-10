@@ -8,7 +8,7 @@ class FarmItem extends Component {
     }
         
     static displayName = 'FarmItem';
-    
+
     static propTypes = {
         name: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
