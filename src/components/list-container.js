@@ -5,7 +5,7 @@ class ListContainer extends Component {
     static displayName = 'ListContainer';
 
     render() {
-        const { items, ItemComponent, onItemSelect } = this.props;
+        const { items, itemComponent: ItemComponent, onItemSelect } = this.props;
         return (
             <ul className="list-container">
                 { items.map(item => <ItemComponent key={item.id} onItemSelect={onItemSelect} {...item} />) }

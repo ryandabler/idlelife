@@ -18,7 +18,7 @@ class IdlePanel extends Component {
     render() {
         return (
             <section className="idle-panel" style={{gridArea: 'a', backroundColor: 'yellow'}}>
-                <ListContainer items={IDLABLES} ItemComponent={FarmItem} onItemSelect={this.selectItem} />
+                <ListContainer items={IDLABLES} itemComponent={FarmItem} onItemSelect={this.selectItem} />
             </section>
         );
     }
