@@ -9,6 +9,10 @@ const FarmPlot = observer(class FarmPlot extends Component {
         this.onClick = this.onClick.bind( this );
     }
 
+    propTypes = {
+        slotNum: PropTypes.number.isRequired
+    };
+
     onClick() {
         const { slotNum } = this.props;
         STORE.locations['farm'].selectedSlot = slotNum;
@@ -26,8 +30,5 @@ const FarmPlot = observer(class FarmPlot extends Component {
 });
 
 FarmPlot.displayName = 'FarmPlot';
-FarmPlot.propTypes = {
-    slotNum: PropTypes.number.isRequired
-};
 
 export default FarmPlot;
