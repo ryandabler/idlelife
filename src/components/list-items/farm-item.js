@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import STORE from '../../stores/store';
 
 class FarmItem extends Component {
     constructor(props) {
@@ -17,6 +18,9 @@ class FarmItem extends Component {
     };
     
     onClick() {
+        const { selectedSlot } = STORE.locations.farm;
+        if (selectedSlot === -1) return;
+
         const { id, onItemSelect } = this.props;
         onItemSelect(id);
     }
