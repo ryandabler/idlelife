@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import ListItem from './list-item';
+import PropTypes from 'prop-types';
 
 class ListContainer extends Component {
     static displayName = 'ListContainer';
+
+    static propTypes = {
+        items: PropTypes.arrayOf(PropTypes.object).isRequired,
+        itemComponent: PropTypes.func.isRequired,
+        onItemSelect: PropTypes.func.isRequired
+    }
 
     render() {
         const { items, itemComponent: ItemComponent, onItemSelect } = this.props;
