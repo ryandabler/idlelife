@@ -18,11 +18,15 @@ const FarmPlot = observer(class FarmPlot extends Component {
         STORE.locations['farm'].selectedSlot = slotNum;
     }
 
-    render() {
+    get isSelected() {
         const { slotNum } = this.props;
         const { locations: { farm: { selectedSlot } } } = STORE;
+        return slotNum === selectedSlot;
+    }
+
+    render() {
         return (
-            <div className={`farm-plot ${slotNum === selectedSlot ? 'selected' : ''}`} style={{backgroundColor: 'white'}} onClick={this.onClick}>
+            <div className={`farm-plot ${this.isSelected ? 'selected' : ''}`} style={{backgroundColor: 'white'}} onClick={this.onClick}>
                 PLOTS
             </div>
         );
