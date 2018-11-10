@@ -37,8 +37,7 @@ class Store {
     currentLocation = 'farm';
     player = {
         inventory: {},
-        stats: [],
-        location: 'farm'
+        stats: []
     };
     idling = [];
     locations = {
@@ -69,11 +68,10 @@ class Store {
         // Create idle object
         const idlable = IDLABLES.find(_idlable => _idlable.id === idleableId);
         const { time, itemId } = idlable;
-        const { location } = this.player;
         const { currentLocation } = this;
         const { selectedSlot } = this.locations[currentLocation];
 
-        const idleObj = new IdleObject(time, itemId, location, selectedSlot, this);
+        const idleObj = new IdleObject(time, itemId, currentLocation, selectedSlot, this);
 
         // start idling
         this.idling.push(idleObj);
