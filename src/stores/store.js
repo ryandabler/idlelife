@@ -4,7 +4,7 @@ let idGenCounter = 0;
 const idGen = () => Date.now().toString() + ++idGenCounter;
 
 class IdleObject {
-    constructor(duration, itemId, store) {
+    constructor(duration, itemId, location, store) {
         const now = Date.now();
 
         // Link to store
@@ -17,6 +17,7 @@ class IdleObject {
         this.current = now;
         this.stop = now + duration;
         this.itemId = itemId;
+        this.location = location;
     }
 
     tick() {
@@ -34,9 +35,15 @@ class Store {
     currentLocation = 'Farm';
     player = {
         inventory: {},
-        stats: []
+        stats: [],
+        location: 'farm'
     };
     idling = [];
+    locations = {
+        farm: {
+            slots: 1
+        }
+    }
 
     hasInInventory(itemId) {
         return !!this.player.inventory[itemId];
@@ -59,7 +66,8 @@ class Store {
         // Create idle object
         const idlable = IDLABLES.find(_idlable => _idlable.id === idleableId);
         const { time, itemId } = idlable;
-        const idleObj = new IdleObject(time, itemId, this);
+        const { location } = this.player;
+        const idleObj = new IdleObject(time, itemId, location, this);
 
         // start idling
         this.idling.push(idleObj);
