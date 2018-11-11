@@ -28,10 +28,31 @@ const FarmPlot = observer(class FarmPlot extends Component {
         return slotNum === selectedSlot;
     }
 
+    get idler() {
+        const { slotNum } = this.props;
+        return STORE.idling.find(idler => idler.location === 'farm' && idler.slot === slotNum);
+    }
+
     render() {
+        const { idler } = this;
+        const remaining = idler ? idler.stop - idler.current : 0;
         return (
             <div className={`farm-plot ${this.isSelected ? 'selected' : ''}`} style={{backgroundColor: 'white'}} onClick={this.onClick}>
-                PLOTS
+                {
+                    idler
+                    ? (<React.Fragment>
+                        <span className="item-name">
+                            { idleable.name }
+                        </span>
+                        <span className="time-left">
+                            { remaining < 0 ? 0 : remaining }
+                        </span>
+                        <span className="collect">
+                            Collect
+                        </span>
+                    </React.Fragment>)
+                    : 'CLICK'
+                }
             </div>
         );
     }
