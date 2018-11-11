@@ -4,11 +4,11 @@ import './styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import worker from './workers/heartbeat';
+import STORE from './stores/store';
 
 const heartbeatWorker = new Worker(worker);
-heartbeatWorker.onmessage = e => {
-    console.log('tick');
-    console.log(e.data, e);
+heartbeatWorker.onmessage = () => {
+    STORE.tick();
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
