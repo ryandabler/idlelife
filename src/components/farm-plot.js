@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import STORE from '../stores/store';
+import { IDLABLES } from '../stores/idlables';
 
 const FarmPlot = observer(class FarmPlot extends Component {
     constructor(props) {
@@ -35,7 +36,9 @@ const FarmPlot = observer(class FarmPlot extends Component {
 
     render() {
         const { idler } = this;
-        const remaining = idler ? idler.stop - idler.current : 0;
+        const [ remaining, idleable ] = idler
+            ? [ idler.stop - idler.current, IDLABLES.find(i => i.id === idler.itemId) ]
+            : [ 0, null ];
         return (
             <div className={`farm-plot ${this.isSelected ? 'selected' : ''}`} style={{backgroundColor: 'white'}} onClick={this.onClick}>
                 {
