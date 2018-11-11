@@ -33,6 +33,11 @@ class IdleObject {
     }
 }
 
+decorate(IdleObject, {
+    status: observable,
+    current: observable
+});
+
 class Store {
     currentLocation = 'farm';
     player = {
