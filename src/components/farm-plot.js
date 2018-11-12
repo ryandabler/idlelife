@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import STORE from '../stores/store';
 import { IDLABLES } from '../stores/idlables';
+import { timeFormatter } from '../utilities/formatting';
 
 const FarmPlot = observer(class FarmPlot extends Component {
     constructor(props) {
@@ -48,11 +49,13 @@ const FarmPlot = observer(class FarmPlot extends Component {
                             { idleable.name }
                         </span>
                         <span className="time-left">
-                            { remaining < 0 ? 0 : remaining }
+                            { remaining < 0 ? 0 : timeFormatter(remaining, 'ms') }
                         </span>
-                        <span className="collect">
-                            Collect
-                        </span>
+                        { remaining <= 0 &&
+                            <span className="collect">
+                                Collect
+                            </span>
+                        }
                     </React.Fragment>)
                     : 'CLICK'
                 }
