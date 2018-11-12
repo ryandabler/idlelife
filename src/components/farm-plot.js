@@ -9,6 +9,7 @@ const FarmPlot = observer(class FarmPlot extends Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind( this );
+        this.onCollect = this.onCollect.bind( this );
     }
 
     static displayName = 'FarmPlot';
@@ -22,6 +23,12 @@ const FarmPlot = observer(class FarmPlot extends Component {
         if (this.isSelected) slotNum = -1;
 
         STORE.locations['farm'].selectedSlot = slotNum;
+    }
+
+    onCollect(e) {
+        e.stopPropagation();
+        const { idler } = this;
+        idler.onDone();
     }
 
     get isSelected() {
@@ -52,7 +59,7 @@ const FarmPlot = observer(class FarmPlot extends Component {
                             { remaining < 0 ? 0 : timeFormatter(remaining, 'ms') }
                         </span>
                         { remaining <= 0 &&
-                            <span className="collect">
+                            <span className="collect" onClick={this.onCollect}>
                                 Collect
                             </span>
                         }
