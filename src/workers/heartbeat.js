@@ -14,4 +14,4 @@ requestAnimationFrame(tick);`;
 const blob = new Blob([workerCode], { type: 'application/javascript' });
 const worker = URL.createObjectURL(blob);
 
-module.exports = worker;
+export default worker;
