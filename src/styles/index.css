@@ -72,9 +72,29 @@ html, body, main, .App {
 }
 
 .farm-plot {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  position: relative;
+  background-color: white; /* TODO: remove when unnecessary */
+  border: 1px solid black;
+  padding: 4px;
   cursor: pointer;
 }
 
 .farm-plot.selected {
-  box-shadow: 0 0 8px blue;
+  box-shadow: 0 0 8px black;
+}
+
+.farm-plot .time-left {
+  justify-self: center;
+  margin-top: 4px;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.farm-plot .collect {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
