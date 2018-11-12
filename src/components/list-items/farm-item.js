@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import STORE from '../../stores/store';
+import { timeFormatter } from '../../utilities/formatting';
 
 class FarmItem extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class FarmItem extends Component {
         return (
             <li className="list-item-farm" onClick={this.onClick}>
                 <span>{ name }</span>
-                <span className="time">{ time }</span>
+                <span className="time">{ timeFormatter(time, 'ms') }</span>
             </li>
         );
     }
