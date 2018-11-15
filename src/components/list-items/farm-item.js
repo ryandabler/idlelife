@@ -26,10 +26,16 @@ class FarmItem extends Component {
         onItemSelect(id);
     }
 
+    get isEnabled() {
+        const { selectedSlot } = STORE.locations.farm;
+        return selectedSlot !== -1;
+    }
+
     render() {
         const { name, time } = this.props;
+        const { isEnabled } = this;
         return (
-            <li className="list-item-farm" onClick={this.onClick}>
+            <li className={`list-item-farm ${isEnabled ? '' : 'disabled'}`} onClick={this.onClick}>
                 <span>{ name }</span>
                 <span className="time">{ timeFormatter(time, 'ms') }</span>
             </li>
