@@ -104,3 +104,10 @@ html, body, main, .App {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.farm-plot .collect:hover {
+  background-color: black;
+  color: white;
+  padding: 0 4px;
+  border-radius: 3px 3px 0 0;
+}
