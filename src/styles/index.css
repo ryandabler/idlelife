@@ -59,8 +59,14 @@ html, body, main, .App {
   font-size: 80%;
 }
 
-.list-item-farm:hover .time {
+.list-item-farm:not(.disabled):hover .time {
   color: #e1e8f0;
+}
+
+.list-item-farm.disabled {
+  background-color: #e1e8f0;
+  cursor: auto;
+  color: #808080;
 }
 
 .garden-panel {
