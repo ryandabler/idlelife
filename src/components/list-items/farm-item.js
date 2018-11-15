@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { observer } from 'mobx-react';
 import STORE from '../../stores/store';
 import { timeFormatter } from '../../utilities/formatting';
 
-class FarmItem extends Component {
+const FarmItem = observer(class FarmItem extends Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind( this );
@@ -41,6 +42,6 @@ class FarmItem extends Component {
             </li>
         );
     }
-}
+});
 
 export default FarmItem;
