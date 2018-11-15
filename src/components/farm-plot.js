@@ -19,6 +19,9 @@ const FarmPlot = observer(class FarmPlot extends Component {
     };
 
     onClick() {
+        const { idler } = this;
+        if (idler) return;
+        
         let { slotNum } = this.props;
         if (this.isSelected) slotNum = -1;
 
