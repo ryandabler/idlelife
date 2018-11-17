@@ -15,10 +15,14 @@ class IdlePanel extends Component {
         STORE.idle(idlableId);
     }
 
+    get unlockedIdlables() {
+        return IDLABLES.filter(idlable => idlable.unlocked);
+    }
+
     render() {
         return (
             <section className="idle-panel" style={{gridArea: 'a', backroundColor: 'yellow'}}>
-                <ListContainer items={IDLABLES} itemComponent={FarmItem} onItemSelect={this.selectItem} />
+                <ListContainer items={this.unlockedIdlables} itemComponent={FarmItem} onItemSelect={this.selectItem} />
             </section>
         );
     }
