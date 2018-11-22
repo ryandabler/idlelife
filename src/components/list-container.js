@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import STORE from '../stores';
 
 class ListContainer extends Component {
     static displayName = 'ListContainer';

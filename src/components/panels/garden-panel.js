@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FarmPlot from '../farm-plot';
-import STORE from '../../stores/store';
+import STORE from '../../stores';
 
 class GardenPanel extends Component {
     static displayName = 'GardenPanel';

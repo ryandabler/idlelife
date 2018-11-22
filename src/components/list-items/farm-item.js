@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
-import STORE from '../../stores/store';
+import STORE from '../../stores';
 import { timeFormatter } from '../../utilities/formatting';
 
 const FarmItem = observer(class FarmItem extends Component {

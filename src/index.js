@@ -4,7 +4,7 @@ import './styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import worker from './workers/heartbeat';
-import STORE from './stores/store';
+import STORE from './stores';
 
 const heartbeatWorker = new Worker(worker);
 heartbeatWorker.onmessage = () => {

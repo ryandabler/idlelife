@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
-import STORE from '../stores/store';
-import IdleStore from '../stores/idlables';
+import STORE, { IdleStore } from '../stores';
 import { timeFormatter } from '../utilities/formatting';
 
 const FarmPlot = observer(class FarmPlot extends Component {
