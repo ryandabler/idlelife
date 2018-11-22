@@ -43,7 +43,9 @@ class Store {
     currentLocation = 'farm';
     player = {
         inventory: {},
-        stats: []
+        stats: {
+            idling: {}
+        }
     };
     idling = [];
     locations = {
