@@ -1,3 +1,4 @@
+import { resolvePathAndGet, resolvePathAndSet } from 'objectivize';
 import { decorate, observable } from 'mobx';
 import { IDLABLES } from './idlables';
 
@@ -31,6 +32,7 @@ class IdleObject {
     onDone() {
         this.store.addToInventory(this.itemId);
         this.store.removeIdlable(this.id);
+        this.store.addToStatistics(`idling.${this.idlableId}`);
     }
 }
 
@@ -84,6 +86,12 @@ class Store {
         // start idling
         this.idling.push(idleObj);
         this.locations[currentLocation].selectedSlot = -1;
+    }
+
+    addToStatistics(path, amount = 1) {
+        const stat = resolvePathAndGet(this.player.stats, path) || 0;
+        const setAmount = stat + amount;
+        resolvePathAndSet(this.player.stats, path, setAmount);
     }
 }
 
