@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import STORE from '../stores/store';
-import { IDLABLES } from '../stores/idlables';
+import IdleStore from '../stores/idlables';
 import { timeFormatter } from '../utilities/formatting';
 
 const FarmPlot = observer(class FarmPlot extends Component {
@@ -48,7 +48,7 @@ const FarmPlot = observer(class FarmPlot extends Component {
     render() {
         const { idler } = this;
         const [ remaining, idleable ] = idler
-            ? [ idler.stop - idler.current, IDLABLES.find(i => i.id === idler.itemId) ]
+            ? [ idler.stop - idler.current, IdleStore._.find(i => i.id === idler.itemId) ]
             : [ 0, null ];
         return (
             <div className={`farm-plot ${this.isSelected ? 'selected' : ''}`} style={{backgroundColor: 'white'}} onClick={this.onClick}>

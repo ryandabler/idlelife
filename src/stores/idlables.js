@@ -22,4 +22,12 @@ const IDLABLES = [
     }
 ];
 
-export { IDLABLES };
+class IdlableStore {
+    constructor() {
+        this._ = IDLABLES;
+    }
+}
+
+const IdleStore = new IdlableStore();
+
+export default IdleStore;

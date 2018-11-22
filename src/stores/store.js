@@ -1,6 +1,6 @@
 import { resolvePathAndGet, resolvePathAndSet } from 'objectivize';
 import { decorate, observable } from 'mobx';
-import { IDLABLES } from './idlables';
+import IdleStore from './idlables';
 
 let idGenCounter = 0;
 const idGen = () => Date.now().toString() + ++idGenCounter;
@@ -76,7 +76,7 @@ class Store {
 
     idle(idleableId) {
         // Create idle object
-        const idlable = IDLABLES.find(_idlable => _idlable.id === idleableId);
+        const idlable = IdleStore._.find(_idlable => _idlable.id === idleableId);
         const { id, time, itemId } = idlable;
         const { currentLocation } = this;
         const { selectedSlot } = this.locations[currentLocation];

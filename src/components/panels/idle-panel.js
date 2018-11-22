@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ListContainer from '../list-container';
-import STORE, { IDLABLES } from '../../stores';
+import STORE, { IdleStore } from '../../stores';
 import FarmItem from '../list-items/farm-item';
 
 class IdlePanel extends Component {
@@ -16,7 +16,7 @@ class IdlePanel extends Component {
     }
 
     get unlockedIdlables() {
-        return IDLABLES.filter(idlable => idlable.unlocked);
+        return IdleStore._.filter(idlable => idlable.unlocked);
     }
 
     render() {
