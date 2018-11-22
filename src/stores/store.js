@@ -5,11 +5,12 @@ let idGenCounter = 0;
 const idGen = () => Date.now().toString() + ++idGenCounter;
 
 class IdleObject {
-    constructor(duration, itemId, location, selectedSlot, store) {
+    constructor(idlableId, duration, itemId, location, selectedSlot, store) {
         const now = Date.now();
 
-        // Link to store
+        // Link for use in object methods
         this.store = store;
+        this.idlableId = idlableId;
 
         // Control properties
         this.id = idGen();
@@ -72,11 +73,11 @@ class Store {
     idle(idleableId) {
         // Create idle object
         const idlable = IDLABLES.find(_idlable => _idlable.id === idleableId);
-        const { time, itemId } = idlable;
+        const { id, time, itemId } = idlable;
         const { currentLocation } = this;
         const { selectedSlot } = this.locations[currentLocation];
 
-        const idleObj = new IdleObject(time, itemId, currentLocation, selectedSlot, this);
+        const idleObj = new IdleObject(id, time, itemId, currentLocation, selectedSlot, this);
 
         // start idling
         this.idling.push(idleObj);
