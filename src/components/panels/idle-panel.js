@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 import ListContainer from '../list-container';
 import STORE, { IdleStore } from '../../stores';
 import FarmItem from '../list-items/farm-item';
 
-class IdlePanel extends Component {
+const IdlePanel = observer(class IdlePanel extends Component {
     static displayName = 'IdlePanel';
 
     constructor(props) {
@@ -26,6 +27,6 @@ class IdlePanel extends Component {
             </section>
         );
     }
-}
+});
 
 export default IdlePanel;

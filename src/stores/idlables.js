@@ -1,4 +1,5 @@
 import { resolvePathAndGet } from 'objectivize';
+import { decorate, observable } from 'mobx';
 
 const IDLABLES = [
     {
@@ -48,6 +49,10 @@ class IdlableStore {
         });
     }
 }
+
+decorate(IdlableStore, {
+    _: observable
+})
 
 const IdleStore = new IdlableStore();
 
