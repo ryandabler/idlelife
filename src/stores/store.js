@@ -1,5 +1,5 @@
 import { resolvePathAndGet, resolvePathAndSet } from 'objectivize';
-import { decorate, observable } from 'mobx';
+import { decorate, observable, reaction } from 'mobx';
 import IdleStore from './idlables';
 
 let idGenCounter = 0;
@@ -93,6 +93,11 @@ class Store {
         const setAmount = stat + amount;
         resolvePathAndSet(this.player.stats, path, setAmount);
     }
+
+    checkForUnlocks = reaction(
+        () => Object.entries(this.player.stats.idling),
+        () => IdleStore.checkToUnlock(this)
+    )
 }
 
 decorate(Store, {
