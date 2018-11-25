@@ -8,6 +8,9 @@ import IdlePanel from './components/panels/idle-panel';
 
 class App extends Component {
 	render() {
+		const { location: { pathname } } = this.props;
+		const className = pathname.slice(1);
+
 		return (
 			<div className={`App ${className}`}>
 				<Header />
