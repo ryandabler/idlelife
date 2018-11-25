@@ -30,6 +30,12 @@ html, body, main, .App {
   grid-template-columns: 1fr 4fr 1fr;
 }
 
+.App.profile {
+  grid-template-areas: 'e e e'
+                       'b b b'
+                       'b b b';
+}
+
 .list-container {
   list-style: none;
   padding: 8px;
@@ -75,6 +81,20 @@ html, body, main, .App {
   grid-auto-rows: 100px;
   grid-gap: 8px 8px;
   padding: 8px;
+}
+
+.player-panel .list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 25px 50px;
+}
+
+.player-panel .stat-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e1e8f0;
+  padding: 4px 8px;
+  border-radius: 3px;
 }
 
 .farm-plot {
@@ -137,4 +157,8 @@ nav .plain-link.path-match, nav .plain-link:hover {
   background-color: #000000;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+}
+
+.player {
+  padding: 8px;
 }
