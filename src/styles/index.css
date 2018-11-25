@@ -111,3 +111,30 @@ html, body, main, .App {
   padding: 0 4px;
   border-radius: 3px 3px 0 0;
 }
+
+header {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #000000;
+}
+
+nav {
+  padding: 8px;
+}
+
+.plain-link {
+  padding: 8px;
+  text-decoration: none;
+  color: #000000;
+}
+
+nav a:not(:last-child) {
+  margin-right: 8px;
+}
+
+nav .plain-link.path-match, nav .plain-link:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
