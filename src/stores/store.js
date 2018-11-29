@@ -1,6 +1,7 @@
 import { resolvePathAndGet, resolvePathAndSet } from 'objectivize';
-import { decorate, observable, reaction } from 'mobx';
+import { decorate, observable, reaction, computed } from 'mobx';
 import IdleStore from './idlables';
+import { ITEMS } from './items';
 
 let idGenCounter = 0;
 const idGen = () => Date.now().toString() + ++idGenCounter;
@@ -94,6 +95,13 @@ class Store {
         resolvePathAndSet(this.player.stats, path, setAmount);
     }
 
+    get inventoryList() {
+        return Object.entries(this.player.inventory).reduce(
+            (arr, [ id, { quantity } ]) => arr.concat({ name: ITEMS.find(item => item.id === parseInt(id)).name, quantity }),
+            []
+        );
+    }
+
     checkForUnlocks = reaction(
         () => Object.entries(this.player.stats.idling),
         () => IdleStore.checkToUnlock(this)
@@ -104,7 +112,8 @@ decorate(Store, {
     currentLocation: observable,
     player: observable,
     idling: observable,
-    locations: observable
+    locations: observable,
+    inventoryList: computed
 });
 
 const STORE = new Store();
