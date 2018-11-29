@@ -87,6 +87,7 @@ html, body, main, .App {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 25px 50px;
+  padding: 0;
 }
 
 .player-panel .stat-item {
@@ -159,6 +160,7 @@ nav .plain-link.path-match, nav .plain-link:hover {
   border-top-right-radius: 3px;
 }
 
-.player {
-  padding: 8px;
+.player-panel {
+  width: 75%;
+  margin: 0 auto;
 }
