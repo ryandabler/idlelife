@@ -1,18 +1,15 @@
 const ITEMS = [
     {
         id: 1,
-        name: 'Carrot',
-        time: 5
+        name: 'Carrot'
     },
     {
         id: 2,
-        name: 'Cucumber',
-        time: 10
+        name: 'Cucumber'
     },
     {
         id: 3,
-        name: 'Cabbage',
-        time: 15
+        name: 'Cabbage'
     }
 ];
 
