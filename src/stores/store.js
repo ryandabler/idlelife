@@ -48,6 +48,9 @@ class Store {
         inventory: {},
         stats: {
             idling: {}
+        },
+        levels: {
+            farming: 0
         }
     };
     idling = [];
