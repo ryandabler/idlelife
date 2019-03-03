@@ -1,16 +1,6 @@
 import { resolvePathAndGet } from 'objectivize';
 import { decorate, observable } from 'mobx';
-/*   {
-        id: 7,
-        itemId: 8,
-        name: 'Cauliflower',
-        time: 180000,
-        unlocked: false,
-        toUnlock: {
-            path: 'player.levels.farming',
-            resolver: pathValue => pathValue >= 5
-        }
-    }, */
+
 const FARM_LVL_PATH = 'player.levels.farming';
 const IDLABLES = [
     [ 1, 1, 'Carrot', 5000, true ],
