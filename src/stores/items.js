@@ -1,248 +1,68 @@
 const ITEMS = [
-    {
-        id: 1,
-        name: 'Carrot'
-    },
-    {
-        id: 2,
-        name: 'Cucumber'
-    },
-    {
-        id: 3,
-        name: 'Cabbage'
-    },
-    {
-        id: 4,
-        name: 'Tomato'
-    },
-    {
-        id: 5,
-        name: 'Onion'
-    },
-    {
-        id: 6,
-        name: 'Wheat'
-    },
-    {
-        id: 7,
-        name: 'Celery'
-    },
-    {
-        id: 8,
-        name: 'Cauliflower'
-    },
-    {
-        id: 9,
-        name: 'Broccoli'
-    },
-    {
-        id: 10,
-        name: 'Pea'
-    },
-    {
-        id: 11,
-        name: 'Turnip'
-    },
-    {
-        id: 12,
-        name: 'Potato'
-    },
-    {
-        id: 13,
-        name: 'Corn'
-    },
-    {
-        id: 14,
-        name: 'Bell pepper'
-    },
-    {
-        id: 15,
-        name: 'Radish'
-    },
-    {
-        id: 16,
-        name: 'Lettuce'
-    },
-    {
-        id: 17,
-        name: 'Spinach'
-    },
-    {
-        id: 18,
-        name: 'Asparagus'
-    },
-    {
-        id: 19,
-        name: 'Oregano'
-    },
-    {
-        id: 20,
-        name: 'Mushroom'
-    },
-    {
-        id: 21,
-        name: 'Bean'
-    },
-    {
-        id: 22,
-        name: 'Garlic'
-    },
-    {
-        id: 23,
-        name: 'Basil'
-    },
-    {
-        id: 24,
-        name: 'Beet'
-    },
-    {
-        id: 25,
-        name: 'Lentils'
-    },
-    {
-        id: 26,
-        name: 'Barley'
-    },
-    {
-        id: 27,
-        name: 'Rye'
-    },
-    {
-        id: 28,
-        name: 'Parsley'
-    },
-    {
-        id: 29,
-        name: 'Eggplant'
-    },
-    {
-        id: 30,
-        name: 'Arugula'
-    },
-    {
-        id: 31,
-        name: 'Sweet potato'
-    },
-    {
-        id: 32,
-        name: 'Brussels sprouts'
-    },
-    {
-        id: 33,
-        name: 'Cilantro'
-    },
-    {
-        id: 34,
-        name: 'Hot pepper'
-    },
-    {
-        id: 35,
-        name: 'Fennel'
-    },
-    {
-        id: 36,
-        name: 'Ginger'
-    },
-    {
-        id: 37,
-        name: 'Rosemary'
-    },
-    {
-        id: 38,
-        name: 'Squash'
-    },
-    {
-        id: 39,
-        name: 'Leek'
-    },
-    {
-        id: 40,
-        name: 'Parsnip'
-    },
-    {
-        id: 41,
-        name: 'Artichoke'
-    },
-    {
-        id: 42,
-        name: 'Oat'
-    },
-    {
-        id: 43,
-        name: 'Pumpkin'
-    },
-    {
-        id: 44,
-        name: 'Rutabaga'
-    },
-    {
-        id: 45,
-        name: 'Thyme'
-    },
-    {
-        id: 46,
-        name: 'Kale'
-    },
-    {
-        id: 47,
-        name: 'Tomatillo'
-    },
-    {
-        id: 48,
-        name: 'Zucchini'
-    },
-    {
-        id: 49,
-        name: 'Dill'
-    },
-    {
-        id: 50,
-        name: 'Soy bean'
-    },
-    {
-        id: 51,
-        name: 'Scallion'
-    },
-    {
-        id: 52,
-        name: 'Rhubarb'
-    },
-    {
-        id: 53,
-        name: 'Endive'
-    },
-    {
-        id: 54,
-        name: 'Anise'
-    },
-    {
-        id: 55,
-        name: 'Horseradish'
-    },
-    {
-        id: 56,
-        name: 'Okra'
-    },
-    {
-        id: 57,
-        name: 'Marjoram'
-    },
-    {
-        id: 58,
-        name: 'Jicama'
-    },
-    {
-        id: 59,
-        name: 'Millet'
-    },
-    {
-        id: 60,
-        name: 'Kohlrabi'
-    },
-    {
-        id: 61,
-        name: 'Sage'
-    },
-];
+    [ 1, 'Carrot' ],
+    [ 2, 'Cucumber' ],
+    [ 3, 'Cabbage' ],
+    [ 4, 'Tomato' ],
+    [ 5, 'Onion' ],
+    [ 6, 'Wheat' ],
+    [ 7, 'Celery' ],
+    [ 8, 'Cauliflower' ],
+    [ 9, 'Broccoli' ],
+    [ 10, 'Pea' ],
+    [ 11, 'Turnip' ],
+    [ 12, 'Potato' ],
+    [ 13, 'Corn' ],
+    [ 14, 'Bell pepper' ],
+    [ 15, 'Radish' ],
+    [ 16, 'Lettuce' ],
+    [ 17, 'Spinach' ],
+    [ 18, 'Asparagus' ],
+    [ 19, 'Oregano' ],
+    [ 20, 'Mushroom' ],
+    [ 21, 'Bean' ],
+    [ 22, 'Garlic' ],
+    [ 23, 'Basil' ],
+    [ 24, 'Beet' ],
+    [ 25, 'Lentils' ],
+    [ 26, 'Barley' ],
+    [ 27, 'Rye' ],
+    [ 28, 'Parsley' ],
+    [ 29, 'Eggplant' ],
+    [ 30, 'Arugula' ],
+    [ 31, 'Sweet potato' ],
+    [ 32, 'Brussels sprouts' ],
+    [ 33, 'Cilantro' ],
+    [ 34, 'Hot pepper' ],
+    [ 35, 'Fennel' ],
+    [ 36, 'Ginger' ],
+    [ 37, 'Rosemary' ],
+    [ 38, 'Squash' ],
+    [ 39, 'Leek' ],
+    [ 40, 'Parsnip' ],
+    [ 41, 'Artichoke' ],
+    [ 42, 'Oat' ],
+    [ 43, 'Pumpkin' ],
+    [ 44, 'Rutabaga' ],
+    [ 45, 'Thyme' ],
+    [ 46, 'Kale' ],
+    [ 47, 'Tomatillo' ],
+    [ 48, 'Zucchini' ],
+    [ 49, 'Dill' ],
+    [ 50, 'Soy bean' ],
+    [ 51, 'Scallion' ],
+    [ 52, 'Rhubarb' ],
+    [ 53, 'Endive' ],
+    [ 54, 'Anise' ],
+    [ 55, 'Horseradish' ],
+    [ 56, 'Okra' ],
+    [ 57, 'Marjoram' ],
+    [ 58, 'Jicama' ],
+    [ 59, 'Millet' ],
+    [ 60, 'Kohlrabi' ],
+    [ 61, 'Sage' ],
+].map(item => ({
+    id: item[0],
+    name: item[1]
+}));
 
 export { ITEMS };
