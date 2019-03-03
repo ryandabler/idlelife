@@ -6,11 +6,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import worker from './workers/heartbeat';
 import STORE from './stores';
+import { openDatabase } from './utilities/indexeddb';
 
 const heartbeatWorker = new Worker(worker);
 heartbeatWorker.onmessage = () => {
     STORE.tick();
 };
+
+openDatabase();
 
 ReactDOM.render(
     <Router>
