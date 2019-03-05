@@ -104,7 +104,7 @@ class IdlableStore {
 
     checkToUnlock(STORE) {
         this._.forEach(idlable => {
-            if (idlable.unlocked) return
+            if (idlable.unlocked) return;
 
             const { toUnlock: { path, resolver } } = idlable;
             const pathValue = resolvePathAndGet(STORE, path);
