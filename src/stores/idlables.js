@@ -46,7 +46,7 @@ const IDLABLES = [
     [ 26, 26, 'Barley', 600000, false, [ FARM_LVL_PATH, gt20 ] ],
     [ 27, 27, 'Rye', 900000, false, [ FARM_LVL_PATH, gt20 ] ],
     [ 28, 28, 'Parsley', 1200000, false, [ FARM_LVL_PATH, gt20 ] ],
-    [ 29, 29, 'Eggplant', 1500000, false, [ FARM_LVL_PATH,  ] ],
+    [ 29, 29, 'Eggplant', 1500000, false, [ FARM_LVL_PATH, gt20 ] ],
     [ 30, 30, 'Arugula', 1800000, false, [ FARM_LVL_PATH, gt20 ] ],
     [ 31, 31, 'Sweet potato', 660000, false, [ FARM_LVL_PATH, gt25 ] ],
     [ 32, 32, 'Brussels sprouts', 960000, false, [ FARM_LVL_PATH, gt25 ] ],
