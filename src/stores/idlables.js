@@ -108,7 +108,7 @@ class IdlableStore {
 
             const { toUnlock: { path, resolver } } = idlable;
             const pathValue = resolvePathAndGet(STORE, path);
-            console.log(path, pathValue, resolver(pathValue));
+            
             if (resolver(pathValue)) idlable.unlocked = true;
         });
     }
