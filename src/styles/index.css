@@ -36,6 +36,10 @@ html, body, main, .App {
                        'b b b';
 }
 
+.idle-panel {
+  overflow-y: auto;
+}
+
 .list-container {
   list-style: none;
   padding: 8px;
