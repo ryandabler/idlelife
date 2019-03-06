@@ -2,6 +2,7 @@ import { resolvePathAndGet, resolvePathAndSet } from 'objectivize';
 import { decorate, observable, reaction, computed } from 'mobx';
 import IdleStore from './idlables';
 import { ITEMS } from './items';
+import { LOCATIONS } from './locations';
 
 let idGenCounter = 0;
 const idGen = () => Date.now().toString() + ++idGenCounter;
@@ -104,6 +105,34 @@ class Store {
             []
         );
     }
+
+    idlesByType(type) {
+        return Object.values(this.player.stats.idling);
+    }
+
+    updateLevel(level) {
+        const idles = this.idlesByType(level);
+        let newLevel;
+        switch (level) {
+            case 'farming':
+                newLevel = Math.floor(
+                    Math.log(idles.reduce((cnt, idle) => cnt + idle)) / Math.log(100)
+                );
+        }
+        this.player.levels[level] = newLevel;
+    }
+
+    updateLevels() {
+        const relevantLevels = LOCATIONS[this.currentLocation];
+        relevantLevels.forEach(level => {
+            this.updateLevel(level);
+        });
+    }
+
+    checkForLevelIncreases = reaction(
+        () => Object.entries(this.player.stats.idling),
+        () => this.updateLevels()
+    )
 
     checkForUnlocks = reaction(
         () => Object.entries(this.player.stats.idling),
