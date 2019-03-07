@@ -22,4 +22,14 @@ const addToDatabase = (store, value) => {
     objStore.add(value);
 };
 
-export { openDatabase, addToDatabase };
+const getFromDatabase = (store, keyPath) => new Promise(resolve => {
+    const transaction = db.transaction([ store ], 'readonly');
+    const objStore = transaction.objectStore(store);
+
+    const getRequest = objStore.get(keyPath);
+    getRequest.onsuccess = () => {
+        resolve(getRequest.result);
+    };
+});
+
+export { openDatabase, addToDatabase, getFromDatabase };
