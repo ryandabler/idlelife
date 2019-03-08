@@ -14,6 +14,7 @@ class Splash extends Component {
         e.preventDefault();
         const { target } = e;
         const userName = target.name.value;
+        if (!userName) return;
 
         const notInDatabase = !(await getFromDatabase('users', userName));
         if (notInDatabase) addToDatabase('users', { userName });
