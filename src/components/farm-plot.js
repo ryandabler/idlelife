@@ -50,7 +50,7 @@ const FarmPlot = observer(class FarmPlot extends Component {
             ? [ idler.stop - idler.current, IdleStore._.find(i => i.id === idler.itemId) ]
             : [ 0, null ];
         return (
-            <div className={`farm-plot ${this.isSelected ? 'selected' : ''}`} style={{backgroundColor: 'white'}} onClick={this.onClick}>
+            <div className={`farm-plot ${this.isSelected ? 'selected' : ''}`} onClick={this.onClick}>
                 {
                     idler
                     ? (<React.Fragment>

@@ -1,3 +1,9 @@
+:root {
+  --bg-color: #3B213E;
+  --acct-main-color: #FFFF00;
+  --fg-color: #FFFFFF
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
 }
 
 code {
@@ -36,6 +43,64 @@ html, body, main, .App {
                        'b b b';
 }
 
+.App.home {
+  grid-template-areas: 'a';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.App.home header {
+  display: none;
+}
+
+.idlelife {
+  color: var(--acct-main-color);
+  font-size: 100px;
+}
+
+.splash h1 {
+  margin: 0 0 50px 0;
+}
+
+.login-form label {
+  color: var(--fg-color);
+  line-height: 16px;
+  font-size: 16px;
+  margin-right: 8px;
+  vertical-align: bottom;
+  display: inline-flex;
+  align-items: flex-end;
+  border-bottom: 8px solid transparent;
+}
+
+.login-form input[type="text"] {
+  background: inherit;
+  border: 0;
+  border-bottom: 2px solid var(--fg-color);
+  margin-right: 8px;
+  font-size: 16px;
+  height: 28px;
+  color: var(--fg-color);
+  outline: none;
+}
+
+.login-form input[type="submit"] {
+  font-size: 16px;
+  border: 2px solid var(--acct-main-color);
+  padding: 3px;
+  background: inherit;
+  color: var(--acct-main-color);
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: var(--acct-main-color);
+  color: var(--bg-color);
+}
+
 .idle-panel {
   overflow-y: auto;
 }
@@ -47,17 +112,19 @@ html, body, main, .App {
 }
 
 .list-item-farm {
-  border: 1px solid #000000;
+  border: 1px solid var(--fg-color);
+  color: var(--fg-color);
   padding: 8px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  transition: all ease-in-out 0.1s;
 }
 
-.list-item-farm:hover {
-  color: #FFFFFF;
-  background-color: #000000;
+.list-item-farm:not(.disabled):hover {
+  color: var(--bg-color);
+  background-color: var(--fg-color);
 }
 
 .list-item-farm:not(:last-of-type) {
@@ -65,18 +132,17 @@ html, body, main, .App {
 }
 
 .list-item-farm .time {
-  color: #808080;
   font-size: 80%;
 }
 
 .list-item-farm:not(.disabled):hover .time {
-  color: #e1e8f0;
+  color: var(--bg-color);
 }
 
 .list-item-farm.disabled {
-  background-color: #e1e8f0;
-  cursor: auto;
-  color: #808080;
+  cursor: default;
+  border-color: var(--fg-color);
+  opacity: .4;
 }
 
 .garden-panel {
@@ -106,14 +172,16 @@ html, body, main, .App {
   display: grid;
   grid-template-rows: min-content 1fr;
   position: relative;
-  background-color: white; /* TODO: remove when unnecessary */
-  border: 1px solid black;
+  border: 1px solid var(--fg-color);
   padding: 4px;
   cursor: pointer;
+  color: var(--fg-color);
 }
 
 .farm-plot.selected {
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px var(--acct-main-color);
+  border-color: var(--acct-main-color);
+  color: var(--acct-main-color);
 }
 
 .farm-plot .time-left {
@@ -128,19 +196,20 @@ html, body, main, .App {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  padding: 0 2px;
+  border-radius: 3px 3px 0 0;
 }
 
 .farm-plot .collect:hover {
-  background-color: black;
-  color: white;
-  padding: 0 4px;
-  border-radius: 3px 3px 0 0;
+  background-color: var(--acct-main-color);
 }
 
 header {
   display: flex;
   align-items: flex-end;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--fg-color);
 }
 
 nav {
@@ -150,7 +219,7 @@ nav {
 .plain-link {
   padding: 8px;
   text-decoration: none;
-  color: #000000;
+  color: var(--fg-color);
 }
 
 nav a:not(:last-child) {
@@ -158,8 +227,8 @@ nav a:not(:last-child) {
 }
 
 nav .plain-link.path-match, nav .plain-link:hover {
-  color: #FFFFFF;
-  background-color: #000000;
+  color: var(--bg-color);
+  background-color: var(--fg-color);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }

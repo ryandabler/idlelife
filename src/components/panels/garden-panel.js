@@ -11,7 +11,7 @@ class GardenPanel extends Component {
         const plots = Array(slots).fill(0);
 
         return (
-            <section className="garden-panel" style={{gridArea: 'b', backgroundColor: 'red'}}>
+            <section className="garden-panel" style={{gridArea: 'b'}}>
                 { plots.map((plot, idx) => <FarmPlot key={idx} slotNum={idx} />) }
             </section>
         );
