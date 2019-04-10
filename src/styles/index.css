@@ -1,26 +1,30 @@
 :root {
-  --bg-color: #3B213E;
-  --acct-main-color: #FFFF00;
-  --fg-color: #FFFFFF
+  --bg-color: #000000;
+  --fg-color: #FFFFFF;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'Roboto Mono', monospace;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+input {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--fg-color);
 }
 
 .idlelife {
-  color: var(--acct-main-color);
   font-size: 100px;
 }
 
@@ -29,14 +33,13 @@ body {
 }
 
 .login-form label {
-  color: var(--fg-color);
   line-height: 16px;
   font-size: 16px;
   margin-right: 8px;
   vertical-align: bottom;
   display: inline-flex;
   align-items: flex-end;
-  border-bottom: 8px solid transparent;
+  border-bottom: 7px solid transparent;
 }
 
 .login-form input[type="text"] {
@@ -46,21 +49,19 @@ body {
   margin-right: 8px;
   font-size: 16px;
   height: 28px;
-  color: var(--fg-color);
   outline: none;
 }
 
 .login-form input[type="submit"] {
   font-size: 16px;
-  border: 2px solid var(--acct-main-color);
+  border: 2px solid var(--fg-color);
   padding: 3px;
   background: inherit;
-  color: var(--acct-main-color);
   transition: all ease-in-out 0.1s;
   cursor: pointer;
 }
 
 .login-form input[type="submit"]:hover {
-  background-color: var(--acct-main-color);
+  background-color: var(--fg-color);
   color: var(--bg-color);
 }
