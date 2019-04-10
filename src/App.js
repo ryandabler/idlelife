@@ -5,9 +5,13 @@ import GardenPanel from './components/panels/garden-panel';
 import GermanPanel from './components/panels/german-panel';
 import TextPanel from './components/panels/text-panel';
 import IdlePanel from './components/panels/idle-panel';
+import PlayerPanel from './components/panels/player-panel';
 import Splash from './components/splash';
+import STORE, { IdleStore } from './stores';
 
 class App extends Component {
+	STORE = STORE;
+	IdleStore = IdleStore;
 	render() {
 		const { location: { pathname } } = this.props;
 		const className = pathname.slice(1);
@@ -23,10 +27,13 @@ class App extends Component {
 						<TextPanel key="textpanel" />,
 						<GermanPanel key="germanpanel" />
 					])} />
+					<Route exact path="/profile" render={() => ([
+						<PlayerPanel key="gardenpanel" />
+					])} />
 				</Switch>
 			</div>
 		);
 	}
 }
 
-export default App;
+export default withRouter(App);

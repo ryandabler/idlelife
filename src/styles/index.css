@@ -168,6 +168,7 @@ html, body, main, .App {
   border-radius: 3px;
 }
 
+/* TODO: make a completed but not collected plot have a default arrow cursor */
 .farm-plot {
   display: grid;
   grid-template-rows: min-content 1fr;

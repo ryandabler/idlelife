@@ -106,6 +106,7 @@ class Store {
         );
     }
 
+    // TODO: add idle type to metadata
     idlesByType(type) {
         return Object.values(this.player.stats.idling);
     }
