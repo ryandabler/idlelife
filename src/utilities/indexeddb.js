@@ -9,6 +9,8 @@ const openDatabase = () => {
         const _db = e.target.result;
 
         _db.createObjectStore('users', { keyPath: 'userName' });
+        _db.createObjectStore('maps', { keyPath: [ 'userName', 'map' ] })
+            .createIndex('UserIndex', 'userName');
     };
 
     rq.onsuccess = () => {
