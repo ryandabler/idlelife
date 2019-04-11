@@ -18,11 +18,15 @@ const openDatabase = () => {
     };
 };
 
-const addToDatabase = (store, value) => {
+const addToDatabase = (store, value) => new Promise(resolve => {
     const transaction = db.transaction([ store ], 'readwrite');
+    transaction.oncomplete = e => {
+        resolve(e);
+    };
+
     const objStore = transaction.objectStore(store);
     objStore.add(value);
-};
+});
 
 const getFromDatabase = (store, keyPath) => new Promise(resolve => {
     const transaction = db.transaction([ store ], 'readonly');
