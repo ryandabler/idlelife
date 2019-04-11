@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { addToDatabase, getFromDatabase } from '../utilities/indexeddb';
+import STORE from '../stores';
 
 class Splash extends Component {
     static displayName = 'Splash';
@@ -16,6 +17,7 @@ class Splash extends Component {
         const userName = target.name.value;
         if (!userName) return;
 
+        STORE.player.name = userName;
         const notInDatabase = !(await getFromDatabase('users', userName));
         if (notInDatabase) {
             addToDatabase('users', { userName });

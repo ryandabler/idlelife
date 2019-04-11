@@ -46,6 +46,7 @@ decorate(IdleObject, {
 class Store {
     currentLocation = 'farm';
     player = {
+        name: '',
         inventory: {},
         stats: {
             idling: {}
