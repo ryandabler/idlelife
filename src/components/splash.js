@@ -17,8 +17,12 @@ class Splash extends Component {
         if (!userName) return;
 
         const notInDatabase = !(await getFromDatabase('users', userName));
-        if (notInDatabase) addToDatabase('users', { userName });
-        this.props.history.push('/mud');
+        if (notInDatabase) {
+            addToDatabase('users', { userName });
+            this.props.history.push('/world-build');
+        } else {
+            this.props.history.push('/mud');
+        }
     }
 
 	render() {
