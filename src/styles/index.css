@@ -82,3 +82,35 @@ input {
   background-color: var(--fg-color);
   color: var(--bg-color);
 }
+
+.loading-screen {
+  height: 100%;
+}
+
+.loading {
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+.fade-1, .fade-2, .fade-3 {
+  opacity: 0;
+  animation: fadein .67s alternate infinite;
+}
+
+.fade-2 {
+  animation-delay: .33s;
+}
+
+.fade-3 {
+  animation-delay: .67s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -32,8 +32,8 @@ class WorldBuilder extends Component {
 
     render() {
         return (
-            <div>
-                Loading
+            <div className="loading-screen">
+                <div className="loading">Loading<span className="fade-1">.</span><span className="fade-2">.</span><span className="fade-3">.</span></div>
             </div>
         );
     }
