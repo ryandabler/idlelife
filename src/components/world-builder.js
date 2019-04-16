@@ -6,6 +6,11 @@ import { addToDatabase } from '../utilities/indexeddb';
 class WorldBuilder extends Component {
     static displayName = 'WorldBuilder';
 
+    constructor(props) {
+        super(props);
+        this.generateWorld = this.generateWorld.bind(this);
+    }
+
     generateWorld() {
         const userName = STORE.player.name;
 
@@ -21,9 +26,11 @@ class WorldBuilder extends Component {
         
     }
 
-    render() {
-        this.generateWorld(); // The synchonicity here prevents the loader from showing until AFTER the world has been generated
+    componentDidMount() {
+        setTimeout(this.generateWorld, 0);
+    }
 
+    render() {
         return (
             <div>
                 Loading
