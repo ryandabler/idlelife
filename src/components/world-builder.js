@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import STORE from '../stores/store';
 import { buildMaps } from '../utilities/world-gen';
 import { addToDatabase } from '../utilities/indexeddb';
@@ -40,6 +41,8 @@ class WorldBuilder extends Component {
         STORE.metaInfo.charSize = { width, height };
         STORE.metaInfo.maxColumns = Math.floor(window.innerWidth / width);
         STORE.metaInfo.maxRows = Math.floor(window.innerHeight / height);
+
+        this.props.history.push('/mud');
     }
 
     componentDidMount() {
@@ -57,4 +60,4 @@ class WorldBuilder extends Component {
     }
 }
 
-export default WorldBuilder;
+export default withRouter(WorldBuilder);
