@@ -56,6 +56,7 @@ class WorldBuilder extends Component {
                 <div id="character-panel" ref={this.characterPanel}>
                     {Object.values(terrainElements).concat('@').map(e => <span key={e}>{e}</span>)}
                 </div>
+            </div>
         );
     }
 }
