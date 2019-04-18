@@ -26,7 +26,7 @@ class WorldBuilder extends Component {
             }
             addToDatabase('maps', object);
         });
-        
+
         const { width, height } = Array.from(this.characterPanel.current.children)
             .reduce(
                 (dims, char) => {
