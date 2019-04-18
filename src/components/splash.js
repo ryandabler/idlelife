@@ -33,7 +33,7 @@ class Splash extends Component {
                 <h1 className="idlelife">IdleLife</h1>
                 <form onSubmit={this.onSubmit} className="login-form">
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" />
+                    <input type="text" id="name" name="name" spellCheck="false" />
                     <input type="submit" value="Login" />
                 </form>
 			</div>
