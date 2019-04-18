@@ -114,3 +114,8 @@ input {
     opacity: 1;
   }
 }
+
+#character-panel {
+  position: absolute;
+  left: -100%;
+}

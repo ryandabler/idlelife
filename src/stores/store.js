@@ -45,6 +45,14 @@ decorate(IdleObject, {
 
 class Store {
     currentLocation = 'farm';
+    metaInfo = {
+        charSize: {
+            width: 0,
+            height: 0
+        },
+        maxRows: 0,
+        maxColumns: 0
+    };
     player = {
         name: '',
         inventory: {},
