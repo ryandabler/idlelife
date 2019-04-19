@@ -28,13 +28,10 @@ class MUD extends Component {
     }
 
     moveCharacter(colOffset, rowOffset) {
-        // const character = document.querySelector('#character');
         const { charPos: [ curCol, curRow ] } = this.state;
         const charPos = [ Math.max(curCol + colOffset, 0), Math.max(curRow + rowOffset, 0) ]
 
         this.setState({ charPos });
-        // character.style.top = `${charPos[1] * DUMMY_HEIGHT}px`;
-        // character.style.left = `${charPos[0] * DUMMY_WIDTH}px`;
     }
 
     executeKeyPress(e) {
