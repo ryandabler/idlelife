@@ -119,3 +119,7 @@ input {
   position: absolute;
   left: -100%;
 }
+
+#character {
+  position: absolute;
+}
