@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import STORE from '../stores';
+import { clamp } from '../utilities/utilities';
 
 class MUD extends Component {
     static displayName = 'MUD';
@@ -29,8 +31,11 @@ class MUD extends Component {
 
     moveCharacter(colOffset, rowOffset) {
         const { charPos: [ curCol, curRow ] } = this.state;
-        const charPos = [ Math.max(curCol + colOffset, 0), Math.max(curRow + rowOffset, 0) ]
-
+        const { metaInfo: { maxColumns, maxRows } } = STORE;
+        const charPos = [
+            clamp(0, maxColumns - 1, curCol + colOffset),
+            clamp(0, maxRows - 1, curRow + rowOffset)
+        ];
         this.setState({ charPos });
     }
 
@@ -53,10 +58,17 @@ class MUD extends Component {
     }
 
 	render() {
+        const { charPos } = this.state;
+        const { metaInfo: { charSize: { height, width } } } = STORE;
+        const charStyle = {
+            top: `${charPos[1] * height}px`,
+            left: `${charPos[0] * width}px`
+        };
+
 		return (
 			<div className="mud">
                 <div id="grid"></div>
-                <span id="character">@</span>
+                <span id="character" style={charStyle}>@</span>
 			</div>
 		);
 	}
