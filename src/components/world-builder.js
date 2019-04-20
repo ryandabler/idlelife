@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import STORE from '../stores/store';
 import { buildMaps } from '../utilities/world-gen';
@@ -7,6 +8,10 @@ import { addToDatabase } from '../utilities/indexeddb';
 class WorldBuilder extends Component {
     static displayName = 'WorldBuilder';
 
+    static propTypes = {
+        history: PropTypes.object.isRequired
+    };
+    
     constructor(props) {
         super(props);
 

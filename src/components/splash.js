@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { addToDatabase, getFromDatabase } from '../utilities/indexeddb';
 import STORE from '../stores';
 import { terrainElements } from '../terrain/terrainElements';
 
 class Splash extends Component {
     static displayName = 'Splash';
+
+    static propTypes = {
+        history: PropTypes.object.isRequired
+    };
 
     constructor(props) {
         super(props);
