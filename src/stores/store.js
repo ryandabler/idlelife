@@ -44,7 +44,11 @@ decorate(IdleObject, {
 });
 
 class Store {
-    currentLocation = 'farm';
+    currentLocation = {
+        location: '',
+        currentPosition: [ 0, 0 ],
+        map: []
+    };
     metaInfo = {
         charSize: {
             width: 0,
