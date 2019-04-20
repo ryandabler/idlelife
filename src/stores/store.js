@@ -1,5 +1,5 @@
 import { resolvePathAndGet, resolvePathAndSet } from 'objectivize';
-import { decorate, observable, reaction, computed } from 'mobx';
+import { decorate, observable, reaction, computed, action } from 'mobx';
 import IdleStore from './idlables';
 import { ITEMS } from './items';
 import { LOCATIONS } from './locations';
@@ -69,6 +69,12 @@ class Store {
             slots: 1,
             selectedSlot: -1
         }
+    }
+
+    updateStore(updates) {
+        Object.entries(updates).forEach( ([ storePath, newValue ]) => {
+            resolvePathAndSet(this, storePath, newValue);
+        });
     }
 
     hasInInventory(itemId) {
@@ -155,7 +161,8 @@ decorate(Store, {
     player: observable,
     idling: observable,
     locations: observable,
-    inventoryList: computed
+    inventoryList: computed,
+    updateStore: action
 });
 
 const STORE = new Store();
