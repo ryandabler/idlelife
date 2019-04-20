@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import STORE from '../stores';
 import { clamp } from '../utilities/utilities';
 
 class MUD extends Component {
     static displayName = 'MUD';
-
-    static propTypes = {
-        dummyHeight: PropTypes.number.isRequired,
-        dummyWidth: PropTypes.number.isRequired
-    };
 
     constructor(props) {
         super(props);
