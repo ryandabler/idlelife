@@ -51,18 +51,20 @@ class MUD extends Component {
         }
     }
 
-	render() {
-        const { charPos } = this.state;
+    get charPosition() {
+        const { charPos: [ curCol, curRow ] } = this.state;
         const { metaInfo: { charSize: { height, width } } } = STORE;
-        const charStyle = {
-            top: `${charPos[1] * height}px`,
-            left: `${charPos[0] * width}px`
+        return {
+            top: `${curRow * height}px`,
+            left: `${curCol * width}px`
         };
+    }
 
+	render() {
 		return (
 			<div className="mud">
                 <div id="grid"></div>
-                <span id="character" style={charStyle}>@</span>
+                <span id="character" style={this.charPosition}>@</span>
 			</div>
 		);
 	}
