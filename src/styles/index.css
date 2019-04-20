@@ -12,7 +12,7 @@ html, body, #root, .App {
 }
 
 html {
-  font-family: 'Roboto Mono', monospace;
+  font-family: monospace;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
 }
 
 input {
-  font-family: 'Roboto Mono', monospace;
+  font-family: monospace;
   color: var(--fg-color);
 }
 
