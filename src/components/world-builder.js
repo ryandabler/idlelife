@@ -11,7 +11,7 @@ class WorldBuilder extends Component {
     static propTypes = {
         history: PropTypes.object.isRequired
     };
-    
+
     constructor(props) {
         super(props);
 
