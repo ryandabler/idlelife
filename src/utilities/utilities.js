@@ -42,10 +42,11 @@ export const sliceGrid = (grid, currentPosition, viewableDimensions) => {
     if (fromRow > gridRows - viewableRows) fromRow = gridRows - viewableRows;
 
     // Generate sliced map
-    const slice = generateGrid(viewableCols, viewableRows);
+    const slice = generateGrid(viewableCols * viewableRows, 1);
     for (let n = fromCol; n < fromCol + viewableCols; n++) {
         for (let m = fromRow; m < fromRow + viewableRows; m++) {
-            slice[n][m] = <span>{grid[n][m]}</span>;
+            const char = grid[n][m];
+            slice[n * viewableRows + m] = <span key={`${n}-${m}`} data-col={n} data-row={m} data-char={char}>{char}</span>;
         }
     }
 

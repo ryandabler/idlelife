@@ -7,7 +7,7 @@ class Grid extends Component {
     }
 
     get grid() {
-        return this.props.grid.reduce((oneDimGrid, col) => oneDimGrid.concat(col), []);
+        return this.props.grid;
     }
     
     render() {
