@@ -29,7 +29,7 @@ class Splash extends Component {
         STORE.player.name = userName;
         const notInDatabase = !(await getFromDatabase('users', userName));
         if (notInDatabase) {
-            addToDatabase('users', { userName });
+            addToDatabase('users', { userName, currentLocation: 'forest', currentPosition: [ 0, 0 ] });
             this.props.history.push('/world-build');
         } else {
             this.props.history.push('/mud');
