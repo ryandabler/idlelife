@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import STORE from '../stores';
-import { clamp } from '../utilities/utilities';
+import { clamp, sliceGrid } from '../utilities/utilities';
+import Grid from './grid';
 
 class MUD extends Component {
     static displayName = 'MUD';
@@ -60,10 +61,15 @@ class MUD extends Component {
         };
     }
 
+    get gridSegment() {
+        const { currentLocation: { map } } = STORE;
+        return sliceGrid(map, this.state.charPos, [ STORE.metaInfo.maxColumns, STORE.metaInfo.maxRows]);
+    }
+
 	render() {
 		return (
 			<div className="mud">
-                <div id="grid"></div>
+                <Grid grid={this.gridSegment} />
                 <span id="character" style={this.charPosition}>@</span>
 			</div>
 		);

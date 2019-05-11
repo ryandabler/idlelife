@@ -105,6 +105,15 @@ input {
   animation-delay: .67s;
 }
 
+.mud {
+  position: relative;
+}
+
+#grid {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 @keyframes fadein {
   0% {
     opacity: 0;
