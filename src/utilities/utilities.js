@@ -12,3 +12,14 @@ export const loadUser = async userName => {
         'currentLocation.map': map
     });
 };
+
+export const generateColumn = (size, fill) => Array(size).fill(fill);
+
+export const generateGrid = (cols, rows, fill = '') => {
+    const grid = Array(cols).fill(fill);
+    grid.forEach((_, colNum) => {
+        grid[colNum] = generateColumn(rows, fill);
+    });
+
+    return grid;
+};
