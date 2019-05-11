@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { addToDatabase, getFromDatabase } from '../utilities/indexeddb';
 import STORE from '../stores';
 import { terrainElements } from '../terrain/terrainElements';
+import { loadUser } from '../utilities/utilities';
 
 class Splash extends Component {
     static displayName = 'Splash';
@@ -32,6 +33,7 @@ class Splash extends Component {
             addToDatabase('users', { userName, currentLocation: 'forest', currentPosition: [ 0, 0 ] });
             this.props.history.push('/world-build');
         } else {
+            await loadUser(userName);
             this.props.history.push('/mud');
         }
     }
