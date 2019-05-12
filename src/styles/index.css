@@ -112,6 +112,15 @@ input {
 #grid {
   display: grid;
   grid-auto-flow: column;
+  user-select: none;
+}
+
+[data-char='ʃ'] {
+  color: rgb(102, 19, 19);
+}
+
+[data-char='ɷ'] {
+  color: rgb(0, 160, 0);
 }
 
 @keyframes fadein {
@@ -131,4 +140,5 @@ input {
 
 #character {
   position: absolute;
+  user-select: none;
 }
